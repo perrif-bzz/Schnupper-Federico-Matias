@@ -8,7 +8,22 @@ package dev.zwazel.medium;
  */
 public class Anagrams {
     public static boolean isAnagram(String first, String second) {
-        // TODO: implement this method
-        return false;
+        first = first.toLowerCase().replace(" ", "");
+        second = second.toLowerCase().replace(" ", "");
+        int count = 0;
+
+        if (first.length() == second.length()) {
+
+
+            // Listen
+            // Silent
+            for (int i = 0; i < second.length(); i++) {
+                if (second.matches(String.valueOf(first.charAt(i)))) {
+                    count++;
+                }
+            }
+        }
+
+        return count == first.length();
     }
 }
