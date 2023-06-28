@@ -16,6 +16,40 @@ public class NumberGuesser {
 
     public static void main(String[] args) {
         //TODO implement
+
+        System.out.println("Enter the minimum number: ");
+        int min = readInt();
+
+        System.out.println("Enter the maximum number: ");
+        int max = readInt();
+
+        Random rand = new Random();
+        int random = rand.nextInt(max);
+
+        while (random < min) {
+            random = rand.nextInt(max);
+        }
+
+        int guessAmount = 0;
+        int guess;
+
+        do
+        {
+            guessAmount++;
+
+            System.out.println("Enter your guess: ");
+            guess = readInt();
+
+            if (guess < random) {
+                System.out.println("Your guess is too low.");
+            }
+            else if (guess > random) {
+                System.out.println("Your guess is too high");
+            }
+
+        } while (guess != random);
+
+        System.out.println("You won, it took you " + guessAmount + " tries!");
     }
 
     /**
